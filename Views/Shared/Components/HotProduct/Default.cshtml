@@ -1,0 +1,20 @@
+﻿@model List<Lesson_4.Models.Product>
+
+<div class="product-section-box shadow-sm">
+    <div class="section-header-bar">
+        Danh muc sản phẩm
+    </div>
+
+    <div class="product-grid-row">
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <div class="col-md-4 product-col">
+                    <img src="@item.Image" alt="@item.Name" />
+                    <div class="p-name">@item.Name</div>
+                </div>
+            }
+        }
+    </div>
+</div>

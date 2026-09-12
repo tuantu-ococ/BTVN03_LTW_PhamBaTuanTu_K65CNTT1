@@ -1,0 +1,36 @@
+## Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userossc
+*.db
+*.pdb
+*.dll
+*.exe
+*.log
+
+## Visual Studio Code
+.vscode/
+
+## Build results
+out/
+
+## NuGet
+packages/
+*.nupkg
+
+## Rider
+.idea/
+
+## DotNet
+project.lock.json
+project.fragment.lock.json
+
+## ASP.NET
+wwwroot/lib/
+
+## Others
+.DS_Store
+Thumbs.db

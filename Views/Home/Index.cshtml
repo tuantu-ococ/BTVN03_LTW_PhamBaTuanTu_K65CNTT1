@@ -1,0 +1,80 @@
+﻿@model List<Lesson_4.Models.Product>
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<style>
+    .product-section-box {
+        border: 1px solid #ced4da;
+        background-color: #fff;
+        margin-bottom: 25px;
+    }
+
+    .section-header-bar {
+        background-color: #2b78c5;
+        color: #fff;
+        padding: 6px 14px;
+        font-size: 13.5px;
+        font-weight: bold;
+        min-height: 32px;
+        display: flex;
+        align-items: center;
+    }
+
+    .product-grid-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+    }
+
+    .product-col {
+        padding: 20px 15px;
+        text-align: center;
+        border-right: 1px solid #e9ecef;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background: #fff;
+    }
+
+        .product-col:last-child {
+            border-right: none;
+        }
+
+        .product-col img {
+            width: 100%;
+            max-width: 170px;
+            height: 170px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .product-col .p-name {
+            font-size: 13px;
+            color: #212529;
+            line-height: 1.4;
+            margin-top: 5px;
+        }
+</style>
+<div class="product-section-box shadow-sm">
+    <div class="section-header-bar">
+        Sản phẩm mới nhất
+    </div>
+    <div class="product-grid-row">
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <div class="col-md-4 product-col">
+                    <img src="@item.Image" alt="@item.Name" />
+                    <div class="p-name">@item.Name</div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+<div>
+    @await Component.InvokeAsync("HotProduct")
+</div>
